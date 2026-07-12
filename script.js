@@ -1,5 +1,74 @@
 const preview = document.getElementById("previewArea");
+const bgColor=document.getElementById("bgColor");
+const bgImage=document.getElementById("bgImage");
+const radius=document.getElementById("radius");
+const spacing=document.getElementById("spacing");
+const border=document.getElementById("border");
+const borderColor=document.getElementById("borderColor");
 
+bgColor.oninput=()=>{
+
+preview.style.background=bgColor.value;
+
+}
+
+bgImage.onchange=e=>{
+
+const file=e.target.files[0];
+
+if(!file)return;
+
+const reader=new FileReader();
+
+reader.onload=function(){
+
+preview.style.backgroundImage=`url(${reader.result})`;
+
+preview.style.backgroundSize="cover";
+
+preview.style.backgroundPosition="center";
+
+}
+
+reader.readAsDataURL(file);
+
+}
+radius.oninput=()=>{
+
+document.querySelectorAll(".slot").forEach(slot=>{
+
+slot.style.borderRadius=radius.value+"px";
+
+});
+
+document.querySelectorAll(".preview-image").forEach(img=>{
+
+img.style.borderRadius=radius.value+"px";
+
+});
+
+}
+spacing.oninput=()=>{
+
+preview.style.gap=spacing.value+"px";
+
+}
+
+function updateBorder(){
+
+document.querySelectorAll(".preview-image").forEach(img=>{
+
+img.style.border=
+
+border.value+"px solid "+borderColor.value;
+
+});
+
+}
+
+border.oninput=updateBorder;
+
+borderColor.oninput=updateBorder;
 function createTemplate(total){
 
     preview.innerHTML="";
@@ -51,7 +120,32 @@ wm.innerHTML=`
 <div class="wm-sub">08123456789</div>
 </div>
 `;
+logo.onchange=e=>{
 
+const file=e.target.files[0];
+
+if(!file) return;
+
+const reader=new FileReader();
+
+reader.onload=function(){
+
+document.querySelectorAll(".wm-logo")
+
+.forEach(l=>{
+
+l.style.backgroundImage=
+
+`url(${reader.result})`;
+
+});
+
+}
+
+reader.readAsDataURL(file);
+
+}
+        
 wrapper.appendChild(wm);
 
 let scale = 1;
@@ -159,3 +253,40 @@ img.style.cursor="grab";
     }
 
 }
+const wmText=document.getElementById("wmText");
+
+const wmSub=document.getElementById("wmSub");
+
+const wmSize=document.getElementById("wmSize");
+
+const wmOpacity=document.getElementById("wmOpacity");
+
+const logo=document.getElementById("logoUpload");
+
+function refreshWatermark(){
+
+document.querySelectorAll(".watermark").forEach(w=>{
+
+w.querySelector(".wm-title").innerText=
+
+wmText.value||"ReyCloudShop";
+
+w.querySelector(".wm-sub").innerText=
+
+wmSub.value||"08123456789";
+
+w.style.fontSize=wmSize.value+"px";
+
+w.style.opacity=wmOpacity.value/100;
+
+});
+
+}
+
+wmText.oninput=refreshWatermark;
+
+wmSub.oninput=refreshWatermark;
+
+wmSize.oninput=refreshWatermark;
+
+wmOpacity.oninput=refreshWatermark;
