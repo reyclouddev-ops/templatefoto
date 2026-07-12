@@ -1,262 +1,199 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ReyCloud Template Studio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReyCloud Template Studio</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
+
 <body>
 
-<div class="background"></div>
+    <div class="background"></div>
 
-<div class="container">
+    <div class="container">
 
-    <aside class="sidebar">
+        <!-- Sidebar -->
+        <aside class="sidebar">
 
-        <div class="logo">
-            <i class="fa-solid fa-images"></i>
-            <h2>ReyCloud</h2>
-            <span>Template Studio</span>
-        </div>
-
-        <div class="menu">
-
-            <button class="active">
-                <i class="fa-solid fa-house"></i>
-                Dashboard
-            </button>
-
-            <button>
-                <i class="fa-solid fa-layer-group"></i>
-                Template
-            </button>
-
-            <button>
-                <i class="fa-solid fa-image"></i>
-                Gallery
-            </button>
-
-            <button>
-                <i class="fa-solid fa-gear"></i>
-                Settings
-            </button>
-
-        </div>
-        <div class="action-panel">
-
-    <button id="saveBtn">
-        💾 Simpan Project
-    </button>
-
-    <button id="resetBtn">
-        ♻ Reset
-    </button>
-
-    <button id="downloadPNG">
-        📥 Download PNG HD
-    </button>
-
-    <button id="downloadJPG">
-        🖼 Download JPG HD
-    </button>
-
-        </div>
-
-    </aside>
-
-<div class="card" onclick="createTemplate(4)">
-    <i class="fa-solid fa-images"></i>
-    <h3>4 Foto</h3>
-    <p>Template Vertikal</p>
-</div>
-
-<div class="card" onclick="createTemplate(8)">
-    <i class="fa-solid fa-images"></i>
-    <h3>8 Foto</h3>
-    <p>Template Premium</p>
-</div>
-
-<div class="card" onclick="createTemplate(12)">
-    <i class="fa-solid fa-images"></i>
-    <h3>12 Foto</h3>
-    <p>Template Full</p>
-</div>
-
-  
-    <main>
-
-        <header>
-
-            <h1>
-                Photo Template Creator
-            </h1>
-
-            <button class="premium">
-                PRO
-            </button>
-
-        </header>
-
-
-        <section class="cards">
-
-            <div class="card">
+            <div class="logo">
                 <i class="fa-solid fa-images"></i>
-
-                <h3>4 Foto</h3>
-
-                <p>Template Vertikal</p>
+                <h2>ReyCloud</h2>
+                <span>Template Studio</span>
             </div>
 
-            <div class="card">
-                <i class="fa-solid fa-images"></i>
+            <div class="menu">
+                <button class="active">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </button>
 
-                <h3>8 Foto</h3>
+                <button>
+                    <i class="fa-solid fa-layer-group"></i>
+                    Template
+                </button>
 
-                <p>Template Premium</p>
+                <button>
+                    <i class="fa-solid fa-image"></i>
+                    Gallery
+                </button>
+
+                <button>
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </button>
             </div>
 
-            <div class="card">
-                <i class="fa-solid fa-images"></i>
+            <div class="action-panel">
 
-                <h3>12 Foto</h3>
+                <button id="saveBtn">💾 Simpan Project</button>
 
-                <p>Template Full</p>
+                <button id="resetBtn">♻ Reset</button>
+
+                <button id="downloadPNG">📥 Download PNG HD</button>
+
+                <button id="downloadJPG">🖼 Download JPG HD</button>
+
             </div>
 
-        </section>
+        </aside>
 
+        <!-- Content -->
+        <main>
 
-        <section class="workspace">
+            <header>
 
-    <div id="previewArea" class="preview-grid">
+                <h1>Photo Template Creator</h1>
 
-        <div class="empty">
-            <i class="fa-solid fa-images"></i>
-            <h2>Pilih Template</h2>
-            <p>Klik 4 Foto, 8 Foto atau 12 Foto.</p>
-        </div>
+                <button class="premium">
+                    PRO
+                </button>
+
+            </header>
+
+            <!-- Template -->
+            <section class="cards">
+
+                <div class="card" onclick="createTemplate(4)">
+                    <i class="fa-solid fa-images"></i>
+                    <h3>4 Foto</h3>
+                    <p>Template Vertikal</p>
+                </div>
+
+                <div class="card" onclick="createTemplate(8)">
+                    <i class="fa-solid fa-images"></i>
+                    <h3>8 Foto</h3>
+                    <p>Template Premium</p>
+                </div>
+
+                <div class="card" onclick="createTemplate(12)">
+                    <i class="fa-solid fa-images"></i>
+                    <h3>12 Foto</h3>
+                    <p>Template Full</p>
+                </div>
+
+            </section>
+
+            <!-- Preview -->
+            <section class="workspace">
+
+                <div id="previewArea" class="preview-grid">
+
+                    <div class="empty">
+                        <i class="fa-solid fa-images"></i>
+                        <h2>Pilih Template</h2>
+                        <p>Klik template terlebih dahulu.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Watermark -->
+            <section class="watermark-panel">
+
+                <h2>Watermark Studio</h2>
+
+                <div class="setting">
+                    <label>Nama Watermark</label>
+                    <input type="text" id="wmText" placeholder="ReyCloudShop">
+                </div>
+
+                <div class="setting">
+                    <label>Nomor / Subtitle</label>
+                    <input type="text" id="wmSub" placeholder="08123456789">
+                </div>
+
+                <div class="setting">
+                    <label>Upload Logo</label>
+                    <input type="file" id="logoUpload" accept="image/png,image/jpeg">
+                </div>
+
+                <div class="setting">
+                    <label>Ukuran</label>
+                    <input type="range" id="wmSize" min="18" max="80" value="35">
+                </div>
+
+                <div class="setting">
+                    <label>Opacity</label>
+                    <input type="range" id="wmOpacity" min="10" max="100" value="100">
+                </div>
+
+            </section>
+
+            <!-- Editor -->
+            <section class="editor-panel">
+
+                <h2>Editor Settings</h2>
+
+                <div class="setting">
+                    <label>Background</label>
+                    <input type="color" id="bgColor" value="#0f172a">
+                </div>
+
+                <div class="setting">
+                    <label>Upload Background</label>
+                    <input type="file" id="bgImage" accept="image/*">
+                </div>
+
+                <div class="setting">
+                    <label>Border Radius</label>
+                    <input type="range" id="radius" min="0" max="50" value="12">
+                </div>
+
+                <div class="setting">
+                    <label>Spacing</label>
+                    <input type="range" id="spacing" min="0" max="40" value="12">
+                </div>
+
+                <div class="setting">
+                    <label>Border</label>
+                    <input type="range" id="border" min="0" max="10" value="0">
+                </div>
+
+                <div class="setting">
+                    <label>Border Color</label>
+                    <input type="color" id="borderColor" value="#ffffff">
+                </div>
+
+            </section>
+
+        </main>
 
     </div>
 
-            <div class="watermark-panel">
-
-    <h2>Watermark Studio</h2>
-
-    <div class="setting">
-
-        <label>Nama Watermark</label>
-
-        <input
-        type="text"
-        id="wmText"
-        placeholder="ReyCloudShop">
-
-    </div>
-
-    <div class="setting">
-
-        <label>Nomor / Subtitle</label>
-
-        <input
-        type="text"
-        id="wmSub"
-        placeholder="08123456789">
-
-    </div>
-
-    <div class="setting">
-
-        <label>Upload Logo</label>
-
-        <input
-        type="file"
-        id="logoUpload"
-        accept="image/png,image/jpeg">
-
-    </div>
-
-    <div class="setting">
-
-        <label>Ukuran</label>
-
-        <input
-        type="range"
-        id="wmSize"
-        min="18"
-        max="80"
-        value="35">
-
-    </div>
-
-    <div class="setting">
-
-        <label>Opacity</label>
-
-        <input
-        type="range"
-        id="wmOpacity"
-        min="10"
-        max="100"
-        value="100">
-
-    </div>
-
-                
-<div class="editor-panel">
-
-<h2>Editor Settings</h2>
-
-<div class="setting">
-<label>Background</label>
-<input type="color" id="bgColor" value="#0f172a">
-</div>
-
-<div class="setting">
-<label>Upload Background</label>
-<input type="file" id="bgImage" accept="image/*">
-</div>
-
-<div class="setting">
-<label>Border Radius</label>
-<input type="range" id="radius" min="0" max="50" value="12">
-</div>
-
-<div class="setting">
-<label>Spacing</label>
-<input type="range" id="spacing" min="0" max="40" value="12">
-</div>
-
-<div class="setting">
-<label>Border</label>
-<input type="range" id="border" min="0" max="10" value="0">
-</div>
-
-<div class="setting">
-<label>Border Color</label>
-<input type="color" id="borderColor" value="#ffffff">
-</div>
-
-</div>
-            </div>
-
-</section>
-
-    </main>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
