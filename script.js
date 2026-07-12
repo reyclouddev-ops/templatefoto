@@ -18,27 +18,39 @@ function createTemplate(total){
         slot.className = "slot";
 
         slot.innerHTML = `
-            <input
-                type="file"
-                accept="image/*"
-                hidden
-                id="file${i}"
-            >
+<input type="file" accept="image/*" hidden>
 
-            <img class="preview-image" id="img${i}">
+<div class="photo-wrapper">
 
-            <div class="upload-box">
+<img class="preview-image">
 
-                <i class="fa-solid fa-cloud-arrow-up"></i>
+<div class="zoom-controls">
+<button class="zoom-in">+</button>
+<button class="zoom-out">−</button>
+</div>
 
-                <span>Upload Foto ${i}</span>
+</div>
 
-            </div>
-        `;
-
+<div class="upload-box">
+<i class="fa-solid fa-cloud-arrow-up"></i>
+<span>Upload Foto ${i}</span>
+</div>
+`;
         const input = slot.querySelector("input");
         const img = slot.querySelector("img");
         const upload = slot.querySelector(".upload-box");
+        const wrapper = slot.querySelector(".photo-wrapper");
+
+let scale = 1;
+let x = 0;
+let y = 0;
+
+function update(){
+
+img.style.transform =
+`translate(${x}px,${y}px) scale(${scale})`;
+
+}
 
         slot.onclick = () => {
 
@@ -58,11 +70,72 @@ function createTemplate(total){
 
                 img.src = reader.result;
 
-                img.style.display = "block";
+                wrapper.style.display="block";
+upload.style.display="none";
 
-                upload.style.display = "none";
+scale = 1;
+x = 0;
+y = 0;
 
-            }
+update();
+                slot.querySelector(".zoom-in").onclick = e=>{
+
+e.stopPropagation();
+
+scale += 0.1;
+
+update();
+
+}
+
+slot.querySelector(".zoom-out").onclick = e=>{
+
+e.stopPropagation();
+
+if(scale>0.5){
+
+scale-=0.1;
+
+update();
+
+}
+
+}
+                let drag=false;
+
+let startX,startY;
+
+img.onpointerdown=e=>{
+
+drag=true;
+
+startX=e.clientX-x;
+
+startY=e.clientY-y;
+
+img.style.cursor="grabbing";
+
+}
+
+window.onpointermove=e=>{
+
+if(!drag) return;
+
+x=e.clientX-startX;
+
+y=e.clientY-startY;
+
+update();
+
+}
+
+window.onpointerup=()=>{
+
+drag=false;
+
+img.style.cursor="grab";
+
+}
 
             reader.readAsDataURL(file);
 
