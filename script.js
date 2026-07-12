@@ -290,3 +290,76 @@ wmSub.oninput=refreshWatermark;
 wmSize.oninput=refreshWatermark;
 
 wmOpacity.oninput=refreshWatermark;
+const downloadPNG=document.getElementById("downloadPNG");
+
+downloadPNG.onclick=()=>{
+
+html2canvas(preview,{
+
+scale:4,
+
+useCORS:true
+
+}).then(canvas=>{
+
+const a=document.createElement("a");
+
+a.download="template.png";
+
+a.href=canvas.toDataURL("image/png");
+
+a.click();
+
+});
+
+}
+    const downloadJPG=document.getElementById("downloadJPG");
+
+downloadJPG.onclick=()=>{
+
+html2canvas(preview,{
+
+scale:4,
+
+useCORS:true
+
+}).then(canvas=>{
+
+const a=document.createElement("a");
+
+a.download="template.jpg";
+
+a.href=canvas.toDataURL("image/jpeg",1);
+
+a.click();
+
+});
+
+}
+
+document.getElementById("resetBtn").onclick=()=>{
+
+if(confirm("Reset project?")){
+
+location.reload();
+
+}
+
+}
+    window.onload=()=>{
+
+const data=
+
+localStorage.getItem(
+
+"reycloud-template"
+
+);
+
+if(data){
+
+preview.innerHTML=data;
+
+}
+
+    }
