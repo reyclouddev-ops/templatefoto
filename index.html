@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReyCloud Template Studio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-images"></i>
+            <h2>ReyCloud</h2>
+            <span>Template Studio</span>
+        </div>
+
+        <div class="menu">
+
+            <button class="active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </button>
+
+            <button>
+                <i class="fa-solid fa-layer-group"></i>
+                Template
+            </button>
+
+            <button>
+                <i class="fa-solid fa-image"></i>
+                Gallery
+            </button>
+
+            <button>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </button>
+
+        </div>
+
+    </aside>
+
+<div class="card" onclick="createTemplate(4)">
+    <i class="fa-solid fa-images"></i>
+    <h3>4 Foto</h3>
+    <p>Template Vertikal</p>
+</div>
+
+<div class="card" onclick="createTemplate(8)">
+    <i class="fa-solid fa-images"></i>
+    <h3>8 Foto</h3>
+    <p>Template Premium</p>
+</div>
+
+<div class="card" onclick="createTemplate(12)">
+    <i class="fa-solid fa-images"></i>
+    <h3>12 Foto</h3>
+    <p>Template Full</p>
+</div>
+
+  
+    <main>
+
+        <header>
+
+            <h1>
+                Photo Template Creator
+            </h1>
+
+            <button class="premium">
+                PRO
+            </button>
+
+        </header>
+
+
+        <section class="cards">
+
+            <div class="card">
+                <i class="fa-solid fa-images"></i>
+
+                <h3>4 Foto</h3>
+
+                <p>Template Vertikal</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-images"></i>
+
+                <h3>8 Foto</h3>
+
+                <p>Template Premium</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-images"></i>
+
+                <h3>12 Foto</h3>
+
+                <p>Template Full</p>
+            </div>
+
+        </section>
+
+
+        <section class="workspace">
+
+    <div id="previewArea" class="preview-grid">
+
+        <div class="empty">
+            <i class="fa-solid fa-images"></i>
+            <h2>Pilih Template</h2>
+            <p>Klik 4 Foto, 8 Foto atau 12 Foto.</p>
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
