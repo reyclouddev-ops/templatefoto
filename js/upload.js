@@ -46,4 +46,16 @@ const Upload = {
 
     }
 
+};                upload.style.display = "none";
+
+                Editor.enable(img);
+
+            };
+
+            reader.readAsDataURL(file);
+
+        });
+
+    }
+
 };
