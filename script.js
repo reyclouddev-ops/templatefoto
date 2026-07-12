@@ -40,6 +40,19 @@ function createTemplate(total){
         const img = slot.querySelector("img");
         const upload = slot.querySelector(".upload-box");
         const wrapper = slot.querySelector(".photo-wrapper");
+        const wm=document.createElement("div");
+
+wm.className="watermark";
+
+wm.innerHTML=`
+<div class="wm-logo"></div>
+<div>
+<div class="wm-title">ReyCloudShop</div>
+<div class="wm-sub">08123456789</div>
+</div>
+`;
+
+wrapper.appendChild(wm);
 
 let scale = 1;
 let x = 0;
